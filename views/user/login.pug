@@ -1,0 +1,19 @@
+extends ../layout/template.pug
+
+block content
+
+	div.main
+		a.logo(href='/') TechStore| Đăng nhập
+
+		p.title Đăng Nhập Vào Tài Khoản Của Bạn
+
+		form(action='/user/login', method='POST')
+			label Tên Đăng Nhập
+			input(name='name', type='text')
+
+			br
+			label Mật Khẩu
+			input(name='pass', type='text')
+
+			br
+			button Login

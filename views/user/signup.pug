@@ -1,0 +1,19 @@
+extends ../layout/template.pug
+
+block content
+
+	div.main
+		a.logo(href='/') TechStore| Đăng Ký
+
+		p.title Đăng Ký Tài Khoản Của Bạn
+
+		form(action='/user/signup', method='POST')
+			label Tên Đăng Nhập
+			input(name='name', type='text')
+
+			br
+			label Mật Khẩu
+			input(name='pass', type='text')
+
+			br
+			button Đăng Ký
