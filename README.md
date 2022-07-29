@@ -1,7 +1,11 @@
 Th 2 23 thg 5
 
-### do not thing :))))
+### do not thing :)))).
 
 Th 6 29 thg 7
 
-### Nguyen Thai Hiep create Nodejs server and connect it to MongoDb database
+### Nguyen Thai Hiep create Nodejs server and connect it to MongoDb database.
+
+Th6 29 thg 7
+
+### Lan Vy create HTML Signup_Login folder.

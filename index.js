@@ -4,7 +4,17 @@ const bodyParse = require('body-parser');
 const User = require('./models/user.model');
 const userRouter = require('./routers/user.router');
 
-mongoose.connect('mongodb://localhost/db');
+mongoose.connect('mongodb://127.0.0.1:27017/test');
+
+var Scheme = mongoose.Schema;
+
+var userData = new Scheme({
+	title: String,
+	content: String,
+	author: String,
+});
+
+var UserData = mongoose.model('UserData', userData, 'user');
 
 async function run() {
 	const user = await User.create({ name: 'hiep', pass: 'dasddq'});
@@ -14,7 +24,7 @@ run()
 
 const user = new User ({name: 'Kyle' , pass: 'dshajdhasjd'});
 
-user.save().then( () => {
+user.save().then(() => {
 	console.log(user);
 })
 
