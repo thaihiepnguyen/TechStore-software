@@ -1,24 +1,21 @@
 const User = require('../models/user.model')
 const bodyParse = require('body-parser');
+const express = require('express');
+const router = express.Router();
+
 
 module.exports.getLoginPage = function(req, res) {
 	res.render('user/login');
 }
 
 module.exports.handleLogin = function(req, res) {
-	console.log(req.body);
-	// kiểm tra tài khoản đã tồn tại hay chưa ?
-
-
-	// kiểm tra tên tài khoản có tồn tại hay không ?
-
-	console.log(req.body.name)
-	User.exists({name: req.body.name}, (err, doc) => {
+	User.exists(req.body, (err, doc) => {
 		if (err) {
 			console.log(err)
 		}else {
 			if (doc) {
-				console.log('trung ten dang nhap')
+				// xác nhận tài khoản
+				router.get('/?login=true');
 			}
 		}
 	})
@@ -26,13 +23,24 @@ module.exports.handleLogin = function(req, res) {
 
 
 module.exports.getSignupPage = function(req, res) {
-	res.render('signup.pug');
+	res.render('user/signup');
 }
 
 module.exports.handleSignup = function(req, res) {
-	const user = new User(req.body)
-	user.save()
-	console.log(user)
+	User.exists(req.body, async (err, doc) => {
+		if (err) {
+			console.log(err);
+		}
+		else {
+			if (!doc) {
+				// chưa tồn tại tài khoản trong database
+				const user = await User.create(req.body);
+			}else {
+				// đã tồn tại tài khoản trong db
+				res.render('user/signup');
+			}
+		}
+	})
 	// người dùng đăng ký tài khoản. Và lưu req.body vào cơ sở dữ liệu.
 }
 

@@ -4,19 +4,19 @@ const bodyParse = require('body-parser');
 const User = require('./models/user.model');
 const userRouter = require('./routers/user.router');
 
-mongoose.connect('mongodb://localhost/db');
+mongoose.connect('mongodb://127.0.0.1:27017/test');
 
-async function run() {
-	const user = await User.create({ name: 'hiep', pass: 'dasddq'});
-	console.log(user);
-}
-run()
+// async function run() {
+// 	const user = await User.create({ name: 'hiep', pass: 'dasddq'});
+// 	console.log(user);
+// }
+// run()
 
-const user = new User ({name: 'Kyle' , pass: 'dshajdhasjd'});
+// const user = new User ({name: 'Kyle' , pass: 'dshajdhasjd'});
 
-user.save().then( () => {
-	console.log(user);
-})
+// user.save().then(() => {
+// 	console.log(user);
+// })
 
 
 const app = express();
@@ -29,6 +29,9 @@ app.set('view engine', 'pug');
 app.set('views', './views');
 
 app.use('/user', userRouter);
+
+app.use(express.static('public'));
+
 
 app.get('/', (req, res) => {
 	res.render('home.pug');
