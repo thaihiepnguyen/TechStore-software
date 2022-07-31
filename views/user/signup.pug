@@ -33,18 +33,24 @@ head
                   i.fas.fa-check-circle  
                   i.fas.fa-exclamation-circle  
                   small Error message
+                  if error_name
+                    p(style="color: red") #{error_name}
                 .form-control
                   input#email(name='email', type='text', placeholder='Email')
                   span.form-message
                   i.fas.fa-check-circle  
                   i.fas.fa-exclamation-circle  
                   small Error message
+                  if error_email
+                    p(style="color: red") #{error_email}
                 .form-control
                   input#password(name='pass', type='password', placeholder='Password')
                   span.form-message
                   i.fas.fa-check-circle  
                   i.fas.fa-exclamation-circle  
                   small Error message
+                  if error_pass
+                    p(style="color: red") #{error_pass}
                 //- .form-control
                 //-   input#password2(name='password2', placeholder='Confirm Password', type='password')
                 //-   span.form-message

@@ -6,19 +6,6 @@ const userRouter = require('./routers/user.router');
 
 mongoose.connect('mongodb://127.0.0.1:27017/test');
 
-// async function run() {
-// 	const user = await User.create({ name: 'hiep', pass: 'dasddq'});
-// 	console.log(user);
-// }
-// run()
-
-// const user = new User ({name: 'Kyle' , pass: 'dshajdhasjd'});
-
-// user.save().then(() => {
-// 	console.log(user);
-// })
-
-
 const app = express();
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true }));
@@ -30,8 +17,8 @@ app.set('views', './views');
 
 app.use('/user', userRouter);
 
-app.use(express.static('public'));
 
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
 	res.render('home.pug');
@@ -41,5 +28,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
 	// khởi chạy server.
 	console.log(`Server running on ${PORT}`);
-}) 
+})
 
