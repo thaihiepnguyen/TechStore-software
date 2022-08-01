@@ -1,4 +1,4 @@
-const User = require('../models/user.model')
+const User = require('../models/user.model');
 const bodyParse = require('body-parser');
 const express = require('express');
 const router = express.Router();
@@ -9,13 +9,11 @@ module.exports.getLoginPage = function(req, res) {
 }
 
 module.exports.handleLogin = async function(req, res) {
-	const errors = [];
-
+	console.log(req.body);
 	const check_user = await User.findOne(req.body);
 	if (check_user == null) {
-		errors.push('User does not exist');
 		res.render('user/login', {
-			errors: errors
+			error_login: 'User does not exist'
 		});
 	} else {
 		res.redirect('/home/:id');
@@ -24,7 +22,7 @@ module.exports.handleLogin = async function(req, res) {
 
 
 module.exports.getSignupPage = function(req, res) {
-	res.render('user/signup');
+	res.render('user/login');
 }
 
 module.exports.handleSignup = async function(req, res) {
@@ -32,37 +30,35 @@ module.exports.handleSignup = async function(req, res) {
 		name: req.body.name,
 		pass: req.body.pass,
 		email: req.body.email
-	}
+	};
+	errors = {};
 
 	let flag = 0;
 	if (!user.name) {
-		res.render('user/signup', {
-			error_name: 'Please fill in user name field.'
-		});
+		errors.username = 'Please fill in user name field.';
 		flag = 1;
 	}
 		
 	if (!user.pass) {
-		res.render('user/signup', {
-			error_pass: 'Please fill in user pass field.'
-		});
+		errors.password = 'Please fill in user password field.';
 		flag = 1;
 	}
 
 	if (!user.email) {
-		res.render('user/signup', {
-			error_email: 'Please fill in email field.'
-		});
+		errors.email = 'Please fill in user email field.';
 		flag = 1;
 	}
 
-	if (flag == 1)
+	if (flag == 1) {
+		res.render('user/login', {
+			errors: errors
+		})
 		return;
-	else {
-		const user = await User.create(req.body);
-		res.redirect('home')
 	}
-	// người dùng đăng ký tài khoản. Và lưu req.body vào cơ sở dữ liệu.
+	else {
+		await User.create(req.body);
+		res.redirect('/');
+	}
 }
 
 
