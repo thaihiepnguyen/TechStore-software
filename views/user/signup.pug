@@ -2,18 +2,24 @@ extends ../layout/template.pug
 
 block content
 
-	div.main
-		a.logo(href='/') TechStore| Đăng Ký
-
-		p.title Đăng Ký Tài Khoản Của Bạn
-
-		form(action='/user/signup', method='POST')
-			label Tên Đăng Nhập
-			input(name='name', type='text')
-
-			br
-			label Mật Khẩu
-			input(name='pass', type='text')
-
-			br
-			button Đăng Ký
+		.center
+		h1 Sign up now
+		p.desc Happiness is not in money, but in shopping &#x2764;&#xFE0F;&#x2764;&#xFE0F;
+		form(method='post')
+		.form_group
+			input(type='text' required='')
+			span
+			label Username
+		.form_group
+			input(type='email' required='')
+			span
+			label Email
+		.form_group
+			input(type='password' required='')
+			span
+			label Password
+		.form_group
+			input(type='password' required='')
+			span
+			label Confirm Password
+		input(type='submit' value='Sign up')

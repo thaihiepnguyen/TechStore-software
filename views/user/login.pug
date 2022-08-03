@@ -2,18 +2,20 @@ extends ../layout/template.pug
 
 block content
 
-	div.main
-		a.logo(href='/') TechStore| Đăng nhập
-
-		p.title Đăng Nhập Vào Tài Khoản Của Bạn
-
-		form(action='/user/login', method='POST')
-			label Tên Đăng Nhập
-			input(name='name', type='text')
-
-			br
-			label Mật Khẩu
-			input(name='pass', type='text')
-
-			br
-			button Login
+	.center
+		h1.login TechStore
+		h3 Log into your account
+		form(method='post')
+			.form_group
+			input(type='text' required='')
+			span
+			label Username
+			.form_group
+			input(type='password' required='')
+			span
+			label Password
+			.pass Forgot Password?
+			input(type='submit' value='Login')
+			.signup_link
+			| Not a member? 
+			a(href='') Signup

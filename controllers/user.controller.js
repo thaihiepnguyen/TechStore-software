@@ -26,7 +26,7 @@ module.exports.handleLogin = function(req, res) {
 
 
 module.exports.getSignupPage = function(req, res) {
-	res.render('signup.pug');
+	res.render('user/signup');
 }
 
 module.exports.handleSignup = function(req, res) {
