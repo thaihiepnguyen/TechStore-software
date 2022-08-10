@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class=""><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<title>Checkout</title>
+
+	<!-- Standard Favicon -->
+	<link rel="icon" type="image/x-icon" href="images//favicon.ico" />
+	
+	<!-- For iPhone 4 Retina display: -->
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images//apple-touch-icon-114x114-precomposed.png">
+	
+	<!-- For iPad: -->
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images//apple-touch-icon-72x72-precomposed.png">
+	
+	<!-- For iPhone: -->
+	<link rel="apple-touch-icon-precomposed" href="images//apple-touch-icon-57x57-precomposed.png">	
+	
+	<!-- Custom - Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<!--[if lt IE 9]>
+		<script src="js/html5/respond.min.js"></script>
+    <![endif]-->
+	
+</head>
+
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
+	<!-- Loader -->
+	<div id="site-loader" class="load-complete">
+		<div class="loader">
+			<div class="loader-inner ball-clip-rotate">
+				<div></div>
+			</div>
+		</div>
+	</div><!-- Loader /- -->
+	
+	
+	<!-- Header -->
+	<header class="header-main container-fluid no-padding">
+		<!-- SidePanel -->
+		<div id="slidepanel">
+			<!-- Top Header -->
+			<div class="top-header container-fluid no-padding">
+				<!-- Container -->
+			
+			</div><!-- Top Header /- -->
+			
+			<!-- Middel Header -->
+			<div class="middle-header container-fluid no-padding">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5 col-sm-4 col-xs-4">
+							<div class="logo-block">
+								<a href="index.html"><img src="images/logo-1.png" alt="logo" height="200" width="200"/></a>
+							</div>
+						</div>
+						<div class="header-info">
+							<div class="col-md-5 col-sm-6 col-xs-6">
+								<div class="input-group">
+									<div class="input-group-btn">
+										<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category<span class="caret"></span></button>
+										<ul class="dropdown-menu">
+											<li><a href="#">Action</a></li>
+											<li><a href="#">Another action</a></li>
+											<li><a href="#">Something else here</a></li>
+										</ul>
+									</div><!-- /btn-group -->
+									<input type="text" placeholder="Search..." class="form-control">
+									<span class="input-group-btn">
+										<button type="button" title="Search" class="btn btn-search"><i class="fa fa-search"></i>
+										Search</button>
+									</span>
+									<span class="input-group-btn">
+										<button type="button" class="btn btn-account" >
+											<img src="images/profile.png" height="5" width="16">
+											My Account
+											<span class="fa fa-account"></span></button>
+								
+									</span>
+									
+								</div><!-- /input-group -->
+						</div>
+						<div class="col-md-2 col-sm-2 col-xs-2 add-to-cart">
+							<ul class="cart">
+								<li>
+									<a aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" id="cart" class="btn dropdown-toggle" title="Add To Cart" href="#">
+										<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+										<h3>Shopping Cart</h3>
+										<h5>(02) Items - <span>23.790.000đ</span></h5>
+									</a>
+									<ul class="dropdown-menu no-padding">
+										<li class="mini_cart_item">
+											<a title="Remove this item" class="remove" href="#">&#215;</a>
+											<a href="#" class="shop-thumbnail">
+												<img width="60" height="60" alt="poster_2_up" class="attachment-shop_thumbnail" src="images/product-detail-1.jpg" /></a>
+											<span class="quantity">1 &#215; <span class="amount">23.790.000đ</span></span>
+										</li>
+										<li class="mini_cart_item">
+											<a title="Remove this item" class="remove" href="#">&#215;</a>
+											<a href="#" class="shop-thumbnail">
+												<img width="60" height="60" alt="poster_2_up" class="attachment-shop_thumbnail" src="images/product-6.jpg" /></a>
+											<span class="quantity">1 &#215; <span class="amount">34,990,000₫											</span></span>
+										</li>
+										<li class="button">
+											<a href="cart.html" title="View Cart">View Cart</a>
+											<a href="checkout.html" title="Check Out">Check out</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div><!-- Row /- -->
+				</div><!-- Container /- -->
+			</div><!-- Middel Header /- -->	
+		</div>	
+		
+		<!-- Menu Block -->
+		<div class="menu-block menu-block-section container-fluid no-padding">
+			<!-- Container -->
+			<div class="container">				
+				<nav class="navbar ow-navigation">
+					<div id="loginpanel" class="desktop-hide">
+						<div class="right" id="toggle">
+							<a id="slideit" href="#slidepanel"><i class="fo-icons fa fa-inbox"></i></a>
+							<a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a>
+						</div>
+					</div>
+					<div class="navbar-header">
+						<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="text-logo desktop-hide" href="index.html">
+							<img src="images/logo-1.png" alt="logo" height="150" width="150"/>
+						</a>
+					</div>
+					<div class="navbar-collapse collapse navbar-right" id="navbar">
+						<ul class="nav navbar-nav menubar">
+							<li class="dropdown">
+								<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Home" href="index.html">Home</a>
+								<i class="ddl-switch fa fa-angle-down"></i>
+								
+							</li>
+							<li class="dropdown">
+								<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Home" href="#">Laptop</a>
+								<i class="ddl-switch fa fa-angle-down"></i>
+								<ul class="dropdown-menu">
+									<li><a title="1" href="#">Laptop Asus</a></li>
+									<li><a title="2" href="#">Laptop Acer</a></li>
+									<li><a title="2" href="#">Laptop Dell</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Home" href="#">PC</a>
+								<i class="ddl-switch fa fa-angle-down"></i>
+								<ul class="dropdown-menu">
+									<li><a title="Shop 2" href="#">PC Văn Phòng</a></li>
+									<li><a title="Shop 2" href="#">PC Đồ Họa</a></li>
+									<li><a title="Shop 2" href="#">PC Gaming</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Home" href="#">Màn hình</a>
+								<i class="ddl-switch fa fa-angle-down"></i>
+								<ul class="dropdown-menu">
+									<li><a title="Shop 2" href="#">Màn hình Đồ Họa</a></li>
+									<li><a title="Shop 2" href="#">Màn hình Gaming</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Home" href="#">Linh Kiện</a>
+								<i class="ddl-switch fa fa-angle-down"></i>
+								<ul class="dropdown-menu">
+									<li><a title="Shop 2" href="#">CPU</a></li>
+									<li><a title="Shop 2" href="#">MainBoard</a></li>
+									<li><a title="Shop 2" href="#">RAM</a></li>
+									<li><a title="Shop 2" href="#">SSD</a></li>
+									<li><a title="Shop 2" href="#">HDD</a></li>
+									<li><a title="Shop 2" href="#">Case Máy tính</a></li>
+									<li><a title="Shop 2" href="#">VGA</a></li>
+									<li><a title="Shop 2" href="#">Quạt tản nhiệt</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Home" href="#">Apple</a>
+								<i class="ddl-switch fa fa-angle-down"></i>
+								<ul class="dropdown-menu">
+									<li><a title="Shop 2" href="#">Macbook</a></li>
+									<li><a title="Shop 2" href="#">Iphone</a></li>
+								</ul>
+							</li>
+						
+							<li class="dropdown">
+								<a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Latest News" href="#">Tin Tức</a>
+
+							</li>
+							<li><a title="Contact Us" href="#">Contact Us</a></li>
+						</ul>
+					</div>
+				</nav><!-- Navigation /- -->
+			</div><!-- Container /- -->
+		</div><!-- Menu Block /- -->
+	</header><!-- Header /- -->
+	
+	<main class="site-main page-spacing">
+		
+		
+		<!-- Checkout -->
+		<div class="woocommerce-checkout">
+			<div class="section-padding"></div>
+			<div class="container">
+				<div class="woocommerce row">
+					<form class="checkout woocommerce-checkout row" method="post" name="checkout">
+						<div class="col-md-6 col-sm-6 col-xs-12 woocommerce-billing-fields">
+							<h4>Customer Information</h4>
+							<div class="col-md-6 col-sm-6 col-xs-12 no-left-padding">
+								<input type="text" class="form-control" placeholder="First Name" />
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12 no-right-padding">
+								<input type="text" class="form-control" placeholder="Last Name" />
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12 no-left-padding">
+								<input type="text" class="form-control" placeholder="Email" />
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12 no-right-padding">
+								<input type="text" class="form-control" placeholder="Phone" />
+							</div>
+							<div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+								<input type="text" class="form-control" placeholder="Address" />
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12 no-left-padding">
+								<select>
+									<option>Province/City</option>
+									<option>Hồ Chí Minh</option>
+									<option>Hà Nội</option>
+									<option>Gia Lai</option>
+									<option>Cao Bằng</option>
+									<option>Phú Yên</option>
+									<option>Bình Định</option>
+									<option>Lai Châu</option>
+								</select>
+							</div>
+							<div class="col-md-6 col-sm-6 col-xs-12 no-right-padding">
+								<select>
+									<option>District</option>
+									<option>Quận 1</option>
+									<option>Quận 2</option>
+									<option>Quận 3</option>
+									<option>Quận 4</option>
+									<option>Quận 5</option>
+									<option>Quận 6</option>
+									<option>Quận 7</option>
+									<option>Quận 8</option>
+									<option>Quận 9</option>
+									<option>Quận 10</option>
+									<option>Quận 11</option>
+									<option>Quận 12</option>
+									<option>Quận Bình Tân</option>
+									<option>Quận Bình Thạnh</option>
+									<option>Quận Tân Phú</option>
+									<option>Quận Tân Bình</option>
+									<option>Quận Gò Vấp</option>
+
+								</select>
+							</div>
+							<div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+								<input type="text" class="form-control" placeholder="Message (optional)" />
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-12 woocommerce-shipping-fields">
+							<h4>Delivery Address</h4>
+							<div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+								
+								<input type="text" class="form-control" placeholder="Please Enter your shipping address here . . ." />
+							</div>
+						</div>
+						<div class="cart-main col-md-12 col-sm-12 col-xs-12">
+							<h4>Your Order Summary</h4>
+							<table class="shop_table cart">
+								<thead>
+									<tr>
+										<th class="product-name" colspan="2">Products</th>
+										<th class="product-price">Price</th>
+										<th class="product-quantity">Quantity</th>
+										<th class="product-subtotal">Total</th>
+										<th class="product-remove">Remove</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="cart_item">
+										<td data-title="Product" class="product-thumbnail">
+											<a title="Product Thumbnail" href="">
+												<img class="attachment-shop_thumbnail wp-post-image" src="images/product-5.jpg" alt="cart" />
+											</a>					
+										</td>
+										<td class="product-name">
+											<a title="Product Name" href="#">Laptop Gaming Acer Aspire 7 A715-42G-R05G GTX 1650 4GB Ryzen 5 5500U 8GB 512GB 15.6 FHD 144Hz IPS Win 11</a>
+										</td>
+										<td data-title="Price" class="product-price">
+											<span class="amount">15,990,000 ₫</span>
+										</td>
+										<td data-title="Quantity" class="product-quantity">
+											<div class="quantity">
+												<input type="button" value="-" class="qtyminus btn" data-field="quantity1" />
+												<input type="text" name="quantity1" value="0" class="qty btn" />
+												<input type="button" value="+" class="qtyplus btn" data-field="quantity1" />
+											</div>
+										</td>
+										<td data-title="Total" class="product-subtotal">
+											<span class="amount">15,990,000 ₫</span>
+										</td>
+										<td class="product-remove">
+											<a title="Remove this item" class="remove" href=""><img src="images/close.png" alt="close" /></a>
+										</td>
+									</tr>
+									
+									<tr class="cart_item">
+										<td data-title="Product" class="product-thumbnail">
+											<a title="Product Thumbnail" href="">
+												<img class="attachment-shop_thumbnail wp-post-image" src="images/product-6.jpg" alt="cart" />
+											</a>					
+										</td>
+										<td class="product-name">
+											<a title="Product Name" href="#">Laptop MSI GP66 Leopard 11UE-643VN (i7-11800H; 16GB; 512GB SSD; RTX 3060/6GB; 15.6" QHD; Win10; Đen)</a>
+											
+										</td>
+										<td data-title="Price" class="product-price">
+											<span class="amount">34,990,000 ₫</span>
+										</td>
+										<td data-title="Quantity" class="product-quantity">
+											<div class="quantity">
+												<input type="button" value="-" class="qtyminus btn" data-field="quantity2" />
+												<input type="text" name="quantity2" value="0" class="qty btn" />
+												<input type="button" value="+" class="qtyplus btn" data-field="quantity2" />
+											</div>
+										</td>
+										<td data-title="Total" class="product-subtotal">
+											<span class="amount">34,990,000 ₫</span>
+										</td>
+										<td class="product-remove">
+											<a title="Remove this item" class="remove" href=""><img src="images/close.png" alt="close" /></a>
+										</td>
+									</tr>
+									
+									<tr class="cart_item">
+										<td data-title="Product" class="product-thumbnail">
+											<a title="Product Thumbnail" href="">
+												<img class="attachment-shop_thumbnail wp-post-image" src="images/product-7.jpg" alt="cart" />
+											</a>					
+										</td>
+										<td class="product-name">
+											<a title="Product Name" href="#">Laptop Gaming Asus TUF A15 FA507RM-HN018W RTX 3060 6GB AMD Ryzen 7 6800H 8GB 512GB 15.6″ FHD IPS 144Hz</a>
+											
+										</td>
+										<td data-title="Price" class="product-price">
+											<span class="amount">28,490,000 ₫</span>
+										</td>
+										<td data-title="Quantity" class="product-quantity">
+											<div class="quantity">
+												<input type="button" value="-" class="qtyminus btn" data-field="quantity3" />
+												<input type="text" name="quantity3" value="0" class="qty btn" />
+												<input type="button" value="+" class="qtyplus btn" data-field="quantity3" />
+											</div>
+										</td>
+										<td data-title="Total" class="product-subtotal">
+											<span class="amount">28,490,000 ₫</span>
+										</td>
+										<td class="product-remove">
+											<a title="Remove this item" class="remove" href=""><img src="images/close.png" alt="close" /></a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="cart_totals">	
+								<div class="totals">
+									<h3>Total
+										<p></p>
+										<p>Shipping</p>
+									</h3>
+									<h4>79,470,000 đ
+										<p></p>
+										<p>FreeShip</p>
+									</h4>
+								</div>
+														
+							</div>
+						</div>
+						
+						<div class="col-md-12 col-sm-12 col-xs-12 woocommerce-checkout-payment">
+							<h4>Payment Methods</h4>
+							<div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+								<input type="checkbox" />
+								<label>Direct Bank Transfer</label>
+							</div>
+							<p>Please transfer money in advance according to the information below:</p>
+							<p>PHUNG NGHIA PHUC</p>
+							<p>277 Nguyễn Văn Cừ Phường 4, Quận 5, Thành phố Hồ Chí Minh</p>
+							<p>Techcombank - Chi nhánh Nam Sài Gòn: 19036662221121</p>
+							<div class="col-md-12 col-sm-12 col-xs-12 no-padding">
+								<input type="checkbox" />
+								<label>COD</label>
+							</div>
+							<p>Payment on receipt of goods.</p>
+							
+						</div>
+						
+						<div class="place-order col-md-12 col-sm-12 col-xs-12">
+							<input type="submit" value="Confirm" />
+						</div>
+					</form>
+
+				</div>
+			</div>
+			<div class="section-padding"></div>
+		</div><!-- Checkout /- -->
+	</main>
+	
+	<!-- Footer Main -->
+	<footer class="footer-main container-fluid no-padding">
+		<div class="container">
+			<div class="row">
+				<div class="footer-header">
+					
+				</div>
+				
+				<!-- Widget About -->
+				<aside class="col-md-4 col-sm-6 col-xs-6 ftr-widget about-widget">
+					<h3>About The Store</h3>
+					<p>TechStore created by student group 3 at Ho Chi Minh University of Science </p>
+					<p><i aria-hidden="true" class="fa fa-phone"></i><a title="phone" href = "tel: +84355881421">0355881421</a></p>
+					<p><i aria-hidden="true" class="fa fa-envelope-o"></i><a title="@gmail" href="mailto:pnphuc20@clc.fitus.edu.vn">pnphuc20@clc.fitus.edu.vn</a></p>
+					<p><i aria-hidden="true" class="fa fa-map-marker"></i><a title="map" href = "https://bom.so/7RriJJ">277 Nguyễn Văn Cừ Phường 4, Quận 5, Thành phố Hồ Chí Minh</a></p>
+				</aside><!-- Widget About /- -->
+				
+				<!-- Widget Links -->
+				<aside class="col-md-2 col-sm-6 col-xs-6 ftr-widget link-widget">
+					<h3>Useful links</h3>
+					<ul>
+						<li><a href="#" title="Abou Us">About Us</a></li>
+						<li><a href="#" title="Our Products">Our Products</a></li>
+						<li><a href="#" title="Customer Support">Customer Support</a></li>
+						<li><a href="#" title="Our Sitemap">Our Sitemap</a></li>
+						<li><a href="#" title="Contact Us">Contact Us</a></li>
+					</ul>
+				</aside><!-- Widget Links /- -->
+				<!-- Widget Contact -->
+				<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget contact-widget">
+					<h3>Contact Us</h3>
+					<ul>
+						<li><a href="#" title="Product Recall">Product Recall</a></li>
+						<li><a href="#" title="Gift Vouchers">Gift Vouchers</a></li>
+						<li><a href="#" title="Returns & Exchange">Returns & Exchange</a></li>
+						<li><a href="#" title="Shipping Options">Shipping Options</a></li>
+						<li><a href="#" title="Help & FAQs">Help & FAQs</a></li>
+					</ul>
+				</aside><!-- Widget Contact /- -->
+				<!-- Widget Isnstagram -->
+				<aside class="col-md-3 col-sm-6 col-xs-6 ftr-widget instagram-widget">
+					<h3>Connect with us</h3>
+					<ul>
+						<div class="footer-social">
+							<ul>
+								<li><a href="#" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#" title="Google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+								<li><a href="#" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</ul>
+				</aside><!-- Widget Newsletter /- -->
+			</div>
+		</div>
+	</footer><!-- Footer Main /- -->
+	
+	<!-- Bottom Footer -->
+	<div class="bottom-footer container-fluid no-padding">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-copyright">
+					<p>&copy; Copyright 2022 - All rights reserved</p>
+				</div>
+			</div>
+		</div>
+	</div><!-- Bottom Footer /- -->
+	
+	
+	
+	<!-- JQuery v1.11.3 -->
+	<script src="js/jquery.min.js"></script>
+
+	<!-- Library - Js -->
+	<script src="libraries/lib.js"></script>
+	<!-- Bootstrap JS File v3.3.5 -->
+	
+	<script src="libraries/jquery.countdown.min.js"></script>
+	
+	<script src="libraries/lightslider-master/lightslider.js"></script>
+	
+	<script src="libraries/slick/slick.min.js"></script>
+
+	<!-- Library - Google Map API -->
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	
+	<!-- Library - Theme JS -->
+	<script src="js/functions.js"></script>
+</body>
+</html>
