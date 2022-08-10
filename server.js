@@ -1,4 +1,7 @@
 const {MongoClient} = require('mongodb');
+const uri = 'mongodb+srv://doananhduong:duong1234@cluster0.lgai80j.mongodb.net/?retryWrites=true&w=majority';
+const client = new MongoClient(uri);
+client.connect();
 
 async function listDatabases(client){
     databasesList = await client.db().admin().listDatabases();
@@ -21,42 +24,24 @@ async function findCustomer(client, name) {
     }
     return res;
 }
-async function main() {
-    const uri = 'mongodb+srv://doananhduong:duong1234@cluster0.lgai80j.mongodb.net/?retryWrites=true&w=majority';
-    const client = new MongoClient(uri);
-
-    try {
-        await client.connect();
-        await createCustomer(client, {
-            username: "doananhduong",
-            password: "duong1234",
-            gmail: "doananhduong09.10@gmail.com",
-            address: Object({
-                st: "Huynh Tan Phat",
-                city :"Ho Chi Minh",
-                country: "Viet Nam"
-            }),
-            phone: "0973822287",
-            gender: "M",
-            dob: new Date("01/01/2000"), //error
-            creditCard: Object({
-                cardId: 9704229211508648,
-                name_on_card: "DOAN ANH DUONG",
-                expire: new Date("01/2024"), //error
-                cvv: 241
-            })
-        });
+        // await createCustomer(client, {
+        //     username: "doananhduong",
+        //     password: "duong1234",
+        //     gmail: "doananhduong09.10@gmail.com",
+        //     address: Object({
+        //         st: "Huynh Tan Phat",
+        //         city :"Ho Chi Minh",
+        //         country: "Viet Nam"
+        //     }),
+        //     phone: "0973822287",
+        //     gender: "M",
+        //     dob: new Date("01/01/2000"), //error
+        //     creditCard: Object({
+        //         cardId: 9704229211508648,
+        //         name_on_card: "DOAN ANH DUONG",
+        //         expire: new Date("01/2024"), //error
+        //         cvv: 241
+        //     })
+        // });
         
-    }
-    catch (e) {
-        console.error(e);
-    }
-    finally {
-        await client.close();
-    }
-}
 
-main();
-
-module.exports.myfunction1 = listDatabases
-module.exports.myfunction2 = createCustomer
