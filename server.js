@@ -69,6 +69,10 @@ app.use('/', express.static(path.join(__dirname, 'HTML_Signup_Login')))
 app.use(bodyParser.json())
 app.use(express.json())
 
+app.get('/', (req,res) => {
+  res.render('signup.html')
+})
+
 app.listen(3000, ()=> {
     console.log('Server is up at 3000')
 })

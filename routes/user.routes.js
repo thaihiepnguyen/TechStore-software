@@ -4,6 +4,14 @@ const userModel = require("./../model/user.models");
 const app = express();
 app.use(bodyParser.json())
 
+// app.get('/login', (req, res) => {
+//   res.render('user/login')
+// })
+
+// app.get('/signup', (req, res) => {
+//   res.render('user/signup')
+// })
+
 app.post('/api/register', async (req,res) => {
     const user = new userModel(req.body)
 
