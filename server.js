@@ -65,7 +65,7 @@ db.once("open", function () {
 
 const app = express()
 app.use(Router)
-app.use('/', express.static(path.join(__dirname, 'HTML_Signup_Login')))
+app.use('/', express.static(path.join(__dirname, 'view')))
 app.use(bodyParser.json())
 app.use(express.json())
 
