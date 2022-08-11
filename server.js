@@ -48,7 +48,7 @@ const express = require("express")
 const path = require("path")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
-const Router = require("./routes/user.routes.js")
+const Router = require("./controllers/user.controllers.js")
 const User = require('./model/user.models')
 const PORT = 3000
 
