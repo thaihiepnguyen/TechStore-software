@@ -3,33 +3,37 @@ var usernamer = document.getElementById('username')
 var emailr = document.getElementById('email')
 var passwordr = document.getElementById('password')
 var password2 = document.getElementById('password2')
+
 const user = require("./../routes/user.routes")
 if(form){
-	form.addEventListener("submit", registerUser) 
+	form.addEventListener("submit", function(e) {
+		e.preventDefault()
+
+		checkInputs()
+	}) 
 }
 
-async function registerUser(event) {
-	event.preventDefault();
-	checkInputs();
+// async function registerUser(event) {
+// 	event.preventDefault();
+// 	checkInputs();
 
-	const username = usernamer.value;
-	const email = emailr.value;
-	const password = passwordr.value;
+// 	const username = usernamer.value;
+// 	const email = emailr.value;
+// 	const password = passwordr.value;
 
-	const result = await fetch('/api/register', {
-		method: 'POST',
-		// header: {
-		// 	'Content-Type': 'application/json'
-		// },
-		body: JSON.stringify({
-			username,
-			email,
-			password
-		})
-	}).then(res => res.json())
-
-	console.log(result)
-};
+// 	const result = await fetch('/api/register', {
+// 		method: 'POST',
+// 		// header: {
+// 		// 	'Content-Type': 'application/json'
+// 		// },
+// 		body: JSON.stringify({
+// 			username,
+// 			email,
+// 			password
+// 		})
+// 	}).then((res) => res.json())
+// 	console.log(result)
+// };
 
 
 function checkInputs() {

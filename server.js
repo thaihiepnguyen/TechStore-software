@@ -50,6 +50,7 @@ const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const Router = require("./routes/user.routes.js")
 const User = require('./model/user.models')
+const PORT = 3000
 
 // or mongodb://localhost:27017/<database-name>
 mongoose.connect('mongodb+srv://doananhduong:duong1234@cluster0.lgai80j.mongodb.net/?retryWrites=true&w=majority', {
@@ -65,10 +66,16 @@ db.once("open", function () {
 
 const app = express()
 app.use(Router)
-app.use('/', express.static(path.join(__dirname, 'view')))
+app.use('/',express.static(path.join(__dirname, 'view')))
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'view/signup.html'));
+});
+
 app.use(bodyParser.json())
 app.use(express.json())
 
-app.listen(3000, ()=> {
-    console.log('Server is up at 3000')
+app.listen(PORT, ()=> {
+    
+  console.log('Server is up at 3000')
 })
+

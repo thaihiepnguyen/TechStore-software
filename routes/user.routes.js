@@ -1,6 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser")
-const userModel = require("./../model/user.models");
+const User = require("./../model/user.models");
 const app = express();
 app.use(bodyParser.json())
 
@@ -13,15 +13,15 @@ app.use(bodyParser.json())
 // })
 
 app.post('/api/register', async (req,res) => {
-    const user = new userModel(req.body)
-
-    try {
-        await user.save()
-        res.send(user)
-    }catch(error) {
-        res.status(500).send(error)
-    }
-})
+    // try {
+    //     const response = await User.create(req.body)
+    //     console.log(response)
+    //     res.send(response)
+    // }catch(error) {
+    //     res.status(500).send(error)
+    // }
+    console.log(req.body)
+  })
 
 app.get("/users", async (request, response) => {
     const users = await userModel.find({});
