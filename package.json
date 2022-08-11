@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "express",
   "version": "1.0.0",
   "description": "Th 2 23 thg 5",
@@ -17,4 +18,13 @@
     "url": "https://github.com/thaihiep232002/group03_20clc07_nmcnpm/issues"
   },
   "homepage": "https://github.com/thaihiep232002/group03_20clc07_nmcnpm#readme"
+=======
+  "dependencies": {
+    "express": "^4.18.1",
+    "jade": "^1.11.0",
+    "mongoose": "^6.5.2",
+    "nodemon": "^2.0.19",
+    "pug": "^3.0.2"
+  }
+>>>>>>> refs/remotes/origin/doan_anh_duong
 }
