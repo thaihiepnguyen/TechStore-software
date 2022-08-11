@@ -49,13 +49,10 @@ const path = require("path")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
 const userRouter = require("./routers/user.routers.js")
-const User = require('./model/user.models')
+const Users = require('./model/user.models')
 
 // or mongodb://localhost:27017/<database-name>
-mongoose.connect('mongodb+srv://doananhduong:duong1234@cluster0.lgai80j.mongodb.net/?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+mongoose.connect('mongodb://127.0.0.1:27017/test');
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
@@ -85,7 +82,27 @@ app.get('/', (req, res) => {
   res.render('home.pug');
 })
 
+app.get('/product', (req, res) => {
+  res.render('product.pug')
+})
+
+app.get('/cart', (req, res) => {
+  res.render('cart.pug')
+})
+
+app.get('/checkout', (req, res) => {
+  res.render('checkout.pug')
+})
+
+app.get('/user/login', (req, res) => {
+  res.render('user/login.pug')
+})
+
+app.post('/user/login', async (req, res) => {
+  console.log(req.body);
+  await Users.create(req.body);
+})
 
 app.listen(2000, ()=> {
-    console.log('Server is up at 3000')
+    console.log('Server is up at 2000')
 })
