@@ -48,7 +48,7 @@ const express = require("express")
 const path = require("path")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
-const Router = require("./routes/user.routes.js")
+const userRouter = require("./routers/user.routers.js")
 const User = require('./model/user.models')
 
 // or mongodb://localhost:27017/<database-name>
@@ -63,12 +63,29 @@ db.once("open", function () {
   console.log("Connected successfully");
 });
 
-const app = express()
-app.use(Router)
-app.use('/', express.static(path.join(__dirname, 'HTML_Signup_Login')))
-app.use(bodyParser.json())
-app.use(express.json())
 
-app.listen(3000, ()=> {
+
+const app = express();
+
+app.set('view engine', 'pug');
+app.set('views', './views');
+
+app.use('/user', userRouter);
+
+
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.static('public'));
+
+app.use(bodyParser.json());
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.render('home.pug');
+})
+
+
+app.listen(2000, ()=> {
     console.log('Server is up at 3000')
 })
