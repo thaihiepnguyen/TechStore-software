@@ -1,20 +1,13 @@
-<<<<<<< HEAD
-        
-=======
->>>>>>> refs/remotes/origin/doan_anh_duong
 const express = require("express")
 const path = require("path")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
-<<<<<<< HEAD
 const Router = require("./controllers/user.controllers.js")
 const User = require('./model/user.models')
 const PORT = 3000
-=======
+
 const userRouter = require("./routers/user.routers.js")
 const Users = require('./model/user.models')
->>>>>>> refs/remotes/origin/doan_anh_duong
-
 mongoose.connect('mongodb://127.0.0.1:27017/test');
 
 const db = mongoose.connection;
@@ -75,6 +68,4 @@ const PORT = 2000;
 
 app.listen(PORT, ()=> {
     console.log(`Server is up at ${PORT}`)
->>>>>>> refs/remotes/origin/doan_anh_duong
-})
-
+});
