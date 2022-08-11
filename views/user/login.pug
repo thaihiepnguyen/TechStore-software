@@ -24,22 +24,25 @@ head
                       h5.fw-normal.mb-3.pb-3(style='letter-spacing: 1px;') Log into your account
                       .spacer
                       .form-control
-                        input#username(name='username', type='text', placeholder='User name')
+                        input#username(name='user', type='text', placeholder='User name')
+                        
                         span.form-message
                         i.fas.fa-check-circle  
                         i.fas.fa-exclamation-circle  
                         small Error message
                       .form-control
-                        input#password(name='password', type='password', placeholder='Password')
+                        input#password(name='pass', type='password', placeholder='Password')
                         span.form-message
                         i.fas.fa-check-circle  
                         i.fas.fa-exclamation-circle  
                         small Error message
+                        if error_login
+                          p#error #{error_login}
                       button Login
                       a.small.text-muted(href='#!') Forgot password?
                       p.mb-5.pb-lg-2(style='color: #393f81;')
                         | Don&apos;t have an account? 
-                        a(href='user/signup', style='color: #393f81;') Register here
+                        a(href='/user/signup', style='color: #393f81;') Register here
                       a.small.text-muted(href='./termofuse.html') Terms of use.
                       a.small.text-muted(href='./privacy.html') Privacy policy
 script(src='./ValidatorLogin.js')

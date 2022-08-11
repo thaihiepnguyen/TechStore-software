@@ -25,29 +25,41 @@ head
         .card-body.py-5.px-md-5
           .row.d-flex.justify-content-center
             .col-lg-7
-              form#form.form(action='', method='POST')
+              form#form.form(action='/user/signup', method='POST')
                 h3.heading Sign up now
                 p.desc Happiness is not in money, but in shopping &#x2764;&#xFE0F;&#x2764;&#xFE0F;
                 .form-control
-                  input#username(autocomplete='off', name='username', type='text', placeholder='User name')
+                  input#username(autocomplete='off', name='user', type='text', placeholder='User name')
+                  if errors 
+                    if errors.username
+                      span(style='color: red') #{errors.username}
                   span.form-message
                   i.fas.fa-check-circle  
                   i.fas.fa-exclamation-circle  
                   small Error message
                 .form-control
                   input#email(autocomplete='off', name='email', type='text', placeholder='Email')
+                  if errors 
+                    if errors.email
+                      span(style='color: red') #{errors.email}
                   span.form-message
                   i.fas.fa-check-circle  
                   i.fas.fa-exclamation-circle  
                   small Error message
                 .form-control
-                  input#password(autocomplete='off', name='password', type='password', placeholder='Password')
+                  input#password(autocomplete='off', name='pass', type='password', placeholder='Password')
+                  if errors 
+                    if errors.password
+                      span(style='color: red') #{errors.password}
                   span.form-message
                   i.fas.fa-check-circle  
                   i.fas.fa-exclamation-circle  
                   small Error message
                 .form-control
-                  input#password2(autocomplete='off', name='password2', placeholder='Confirm Password', type='password')
+                  input#password2(autocomplete='off', name='pass2', placeholder='Confirm Password', type='password')
+                  if errors 
+                    if errors.pass
+                      span(style='color: red') #{errors.pass}
                   span.form-message
                   i.fas.fa-check-circle  
                   i.fas.fa-exclamation-circle  

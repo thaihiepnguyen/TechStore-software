@@ -67,8 +67,6 @@ const app = express();
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-app.use('/user', userRouter);
-
 
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true }));
@@ -94,15 +92,19 @@ app.get('/checkout', (req, res) => {
   res.render('checkout.pug')
 })
 
-app.get('/user/login', (req, res) => {
-  res.render('user/login.pug')
-})
+// app.get('/user/login', (req, res) => {
+//   res.render('user/login.pug')
+// })
 
-app.post('/user/login', async (req, res) => {
-  console.log(req.body);
-  await Users.create(req.body);
-})
+// app.post('/user/login', async (req, res) => {
+//   console.log(req.body);
+//   await Users.create(req.body);
+// })
 
-app.listen(2000, ()=> {
-    console.log('Server is up at 2000')
+
+app.use('/user', userRouter);
+const PORT = 2000;
+
+app.listen(PORT, ()=> {
+    console.log(`Server is up at ${PORT}`)
 })
