@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const express = require("express");
 const bodyParser = require("body-parser")
 const User = require("./../model/user.models");
@@ -35,7 +34,7 @@ app.get("/users", async (request, response) => {
   });
 
 module.exports = app
-=======
+
 const User = require('../model/user.models');
 const bodyParse = require('body-parser');
 const express = require('express');
@@ -104,4 +103,3 @@ module.exports.handleSignup = async function(req, res) {
 		res.redirect('/user/login');
 	}
 }
->>>>>>> refs/remotes/origin/doan_anh_duong
