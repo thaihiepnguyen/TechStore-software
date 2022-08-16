@@ -4,7 +4,6 @@ const router = express.Router();
 const controller = require('../controllers/user.controller');
 const multer = require('multer');
 const upload = multer({ dest: './public/uploads/' });
-const jwt = require('jsonwebtoken');
 const User = require('../models/user.model');
 
 router.get('/login', controller.getLoginPage);

@@ -92,7 +92,16 @@ module.exports.handleSignup = async function(req, res) {
 	}
 }
 
+module.exports.getUserProfile = async function(req, res) {
 
+    console.log(req.cookies.userId)
+    let this_user = await User.findOne({username: req.cookies.userId})
+
+    console.log(this_user)
+    res.render('user/profile.pug', {
+        user: this_user
+    })
+}
 
 
 

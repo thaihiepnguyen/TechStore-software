@@ -1,18 +1,12 @@
-require('dotenv').config();
-
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParse = require('body-parser');
 const User = require('./models/user.model');
-const Product = require('./models/product.model')
-const Session = require('./models/session.model')
+const Product = require('./models/product.model');
 const userRouter = require('./routers/user.router');
 const productRouter = require('./routers/product.router');
 const cartRouter = require('./routers/cart.router');
 
-// const authRouter = require('./routers/auth.router');
-const multer = require('multer');
-const jwt = require('jsonwebtoken');
+
 var cookieParser = require('cookie-parser')
 
 
@@ -59,7 +53,9 @@ app.get('/deleteCookie', (req, res) => {
 })
 
 app.get('/sort', async (req, res) => {
+
 	const products = await Product.find();
+	const user = await User.findOne({'username': req.cookies.userId});
 
 	for (let i = 0; i < products.length; i++) {
 		for (let j = 0; j < products.length; j++) {
@@ -73,7 +69,8 @@ app.get('/sort', async (req, res) => {
 
 	res.render('product/items.pug',
 	{
-		products: products
+		products: products,
+		user: user
 	});
 })
 
