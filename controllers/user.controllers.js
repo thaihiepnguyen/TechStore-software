@@ -69,6 +69,12 @@ module.exports.handleSignup = async function(req, res) {
 		password: "",
 		email: "",
 		pass: "",
+		payment: Object( {
+			bankname: "None",
+			banknumber: "None",
+			bankED: "None",
+			cusName: "None"
+		})
 	};
 
 	let flag = 0;

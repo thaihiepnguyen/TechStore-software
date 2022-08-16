@@ -6,6 +6,7 @@ const userSchema = new mongoose.Schema({
 	email: String,
 	pass: String,
 	pass2: String,
+	payment: Object
 })
 
 module.exports = mongoose.model("Users", userSchema, 'User');
