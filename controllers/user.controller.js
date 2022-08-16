@@ -29,7 +29,7 @@ module.exports.handleLogin = async function(req, res) {
 }
 
 module.exports.getSignupPage = function(req, res) {
-	res.render('user/signup.pug');
+	res.render('user/signup');
 }
 
 module.exports.handleSignup = async function(req, res) {
