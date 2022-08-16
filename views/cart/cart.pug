@@ -7,79 +7,73 @@ html
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
         crossorigin="anonymous")
         link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-
+        link(rel='stylesheet', href="/styles/product-styles.css")
         link(rel="stylesheet", href="/styles/home-styles.css")
+        link(rel="stylesheet", href="/styles/cart.css")
     body
       nav.flex-div
         a.nav-left(href='/')
-          img.logo-web(src='./images/logo.png', alt='')
+          img.logo-web(src='/images/logo.png', alt='')
         .nav-middle.flex-div
           form(action="/product/items/search", method='GET').search-box.flex-div
             input(type='text', name='q', placeholder='Tìm kiếm sản phẩm')
             button
-              img.search-icon(src='./images/search.svg.png', alt='')
+              img.search-icon(src='/images/search.svg.png', alt='')
         .nav-right.flex-div
           if !user
             button.login-button
-              a(href='user/login') Đăng Nhập
+              a(href='/user/login') Đăng Nhập
             button.signup-button 
-              a(href='user/signup') Đăng Ký
+              a(href='/user/signup') Đăng Ký
           else
             a#username(href='/user/' + user.username) #{user.username}
             img#avatar(src='/' + user.avatar)
-            a#logout(href='/deleteCookie') Đăng Xuất
-            a#cart(href='/cart/' + user.username)
-              img#cart-icon(src='/images/cart.png')
-      .header-content.row
-        .col-3
-          h1 Sản Phẩm Có Giá Cực Hot!
-          h3 Giảm giá lên đến 50%
-          a(href="#").btn Xem ngay
-        .col-3
-          img(src="/images/macbook.jpeg")
-        .col-3
-          img(src="/images/macbookair.jpeg") 
-
       .product 
-        .small-container
-          h2.product-title Các Sản Phẩm Bán Chạy
-          .row 
-            .col-4
-              img(src="/images/product-01.jpeg")
-              h4 Redmi Note 11S
-              p Giá: 6.280.000đ
-              a(href="#").btn Mua ngay
-            .col-4
-              img(src="/images/product-02.jpeg")
-              h4 iPhone 13 Pro Max
-              p Giá: 28.290.000đ
-              a(href="#").btn Mua ngay
-            .col-4
-              img(src="/images/product-03.jpeg")
-              h4 Samsung Galaxy A23
-              p Giá: 5.190.000đ
-              a(href="#").btn Mua ngay
-            .col-4
-              img(src="/images/product-04.jpeg")
-              h4 Galaxy Z Fold4
-              p Giá: 40.990.000đ
-              a(href="#").btn Mua ngay
-          if !user 
-            a(href="/product/items") Xem tất cả
-          else
-            a(href="/product/items/" + user.username) Xem tất cả
-
-      .offer
-        .small-container
-          .row
-            .col-2
-              img(src="/images/iphone-11-offer.jpeg")
-            .col-2
-              p Độc Quyền Có Sẵn Trên TechStore
-              h1 iPhone 11 64GB
-              small iPhone 11 hoàn toàn giữ nguyên kiểu dáng và màn hình giống như iPhone XR. Nó sử dụng cùng một màn hình IPS LCD 6,1 "với 326ppi và tai thỏ ở trên chứa công nghệ Face ID. Các thông số kỹ thuật của màn hình không thay đổi - cùng độ tương phản, độ sáng, Haptic Touch và không thay đổi.
-              a(href="#")#small-btn.btn Xem ngay
-          // Site footer
+        .small-cart-container
+            .col-md-8
+            .product-details.mr-2
+              a.d-flex.flex-row.align-items-center(href='/product/items/' + user.username)
+                i.fa.fa-long-arrow-left
+                span.ml-2 Tiếp tục mua hàng
+                hr
+              h3#cart-title.mb-0 Giỏ hàng
+              .d-flex.justify-content-between
+              span Bạn có 
+              b #{size} 
+              span sản phẩm trong giỏ hàng
+              
+              .d-flex.flex-row.align-items-center
+              br
+              br
+                    //- span.text-black-50 Sắp xếp theo:
+                    //- .price.ml-2
+                    //- span.mr-1 giá
+                    //- i.fa.fa-angle-down
+            if products
+              each product in products 
+                .product-container
+                  img.product-image(src=product.image)
+                  h6.name-items=product.name
+                  p=`Giá bán: ${product.price}đ`
+            .col-md-8
+            .payment-info
+                .d-flex.justify-content-between.align-items-center
+                span Chi tiết đơn hàng
+                span.type.d-block.mt-3.mb-1 Thông tin thẻ tín dụng
+                div
+                label.credit-card-label Tên thẻ tín dụng
+                input.form-control(type='text')
+                div
+                label.credit-card-label Số tài khoản
+                input.form-control(type='text')
+                div
+                label.credit-card-label Địa chỉ nhận hàng
+                input.form-control(type='text')
+                hr.line
+                .d-flex.justify-content-between.information
+                span Tổng:    #{total} đ
+                br
+                button(type='button') Checkout
 
     footer.site-footer
       .container
@@ -106,7 +100,7 @@ html
               li
                 a(href='http://scanfcode.com/category/templates/') Chuột
           .col-xs-6.col-md-3
-            h6 Liên Hệ Với Chúng Tôi  
+            h6 Liên Hệ Với Chúng Tôi
             ul.footer-links
               li
                 a(href='http://scanfcode.com/about/') Thông Tin Nhóm
