@@ -413,7 +413,7 @@ button a:hover {
 }
 
 #avatar {
-  width: 25px;
+  width: 40px;
   border-radius: 50%;
   border-width: 1px;
   border-style: solid;
@@ -428,7 +428,7 @@ button a:hover {
 
 #cart-icon {
   width: 25px;
-  margin-left: 40px;
+  /* margin-left: 40px; */
 }
 
 #logout {

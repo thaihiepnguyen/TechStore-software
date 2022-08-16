@@ -22,9 +22,35 @@ router.get('/:username', async (req, res) => {
             total += parseInt(products[i].price)
         }
     }
+
+    var object = {}
+
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].name in object) {
+            object[products[i].name]++
+        }
+        else {
+            object[products[i].name] = 1
+        }
+    }
     
 
-    // get users
+    var display_product = []
+
+    for (const property in object) {
+        var temp = await Product.findOne({name: property})
+        var object_temp = {
+            name: '',
+            price: '',
+            image: '',
+            count: '',
+        }
+        object_temp.name = temp.name
+        object_temp.price = temp.price
+        object_temp.image = temp.image
+        object_temp.count = object[property]
+        display_product.push(object_temp)
+    }
 
     if (!req.cookies.userId) {
         res.redirect('/user/login');
@@ -37,15 +63,14 @@ router.get('/:username', async (req, res) => {
     db_user = await User.findOne(this_user)
 
     res.render('cart/cart.pug', {
-        products: products,
+        products: display_product,
         total: total,
-        size: products.length,
+        size: display_product.length,
         user: db_user
     });
 })
 
 router.get('/add/:product', async (req, res) => {
-
     this_session = await Session.findOne({name: req.cookies.userId})
 
     if (this_session) {
@@ -60,6 +85,18 @@ router.get('/add/:product', async (req, res) => {
     }
 
     res.redirect('/product/items/' + req.params.product)
+})
+
+router.get('/delete/:product', async (req, res) => {
+    this_session = await Session.findOne({name: req.cookies.userId})
+    if (this_session) {
+        this_session.products = this_session.products.filter( (ele) => {
+            return ele != req.params.product;
+        })
+        this_session.save()
+    }
+
+    res.redirect('/cart/' + req.cookies.userId)
 })
 
 module.exports = router;

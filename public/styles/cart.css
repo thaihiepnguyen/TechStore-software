@@ -126,3 +126,7 @@ label.radio input:checked + span {
 #cart-title {
   color: #DC143C;
 }
+
+.delete_button {
+  color: black;
+}

@@ -18,20 +18,23 @@ html
             input(type='text', name='q', placeholder='Tìm kiếm sản phẩm')
             button
               img.search-icon(src='./images/search.svg.png', alt='')
-        .nav-right.flex-div
-          if !user
+        if !user
+          .nav-right.flex-div
             button.login-button
-              a(href='/user/login') Đăng Nhập
+              a(href='user/login') Đăng Nhập
             button.signup-button 
-              a(href='/user/signup') Đăng Ký
-          else
-            a#username(href='/user/' + user.username) #{user.username}
-            img#avatar(src='/' + user.avatar)
+              a(href='user/signup') Đăng Ký
+        else
+          .flex-div
             a#cart(href='/cart/' + user.username)
               img#cart-icon(src='/images/cart.png')
+            a#username(href='/user/' + user.username)
+              img#avatar(src='/' + user.avatar)
       .product 
         .small-container
           h2.product-title Danh Sách Các Sản Phẩm
+          a(href='/sort')
+            button Sắp xếp theo giá
           .flex-container
             if products
               each product in products
@@ -40,21 +43,6 @@ html
                   h6.name-items=product.name
                   p=`Giá bán: ${product.price}đ`
                   a(href="/cart/add/" + product.name).btn Mua ngay
-          //- ul.pagination
-          //-   li.page-item
-          //-     a.page-link(href='#', aria-label='Previous')
-          //-       span(aria-hidden='true') &laquo;
-          //-       span.sr-only Previous
-          //-   li.page-item
-          //-     a.page-link(href='#') 1
-          //-   li.page-item
-          //-     a.page-link(href='#') 2
-          //-   li.page-item
-          //-     a.page-link(href='#') 3
-          //-   li.page-item
-          //-     a.page-link(href='#', aria-label='Next')
-          //-       span(aria-hidden='true') &raquo;
-          //-       span.sr-only Next
 
 
     footer.site-footer

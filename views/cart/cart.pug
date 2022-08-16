@@ -19,14 +19,9 @@ html
             input(type='text', name='q', placeholder='Tìm kiếm sản phẩm')
             button
               img.search-icon(src='/images/search.svg.png', alt='')
-        .nav-right.flex-div
-          if !user
-            button.login-button
-              a(href='/user/login') Đăng Nhập
-            button.signup-button 
-              a(href='/user/signup') Đăng Ký
-          else
-            a#username(href='/user/' + user.username) #{user.username}
+        .flex-div
+          span#username #{user.username}
+          a(href='/user/' + user.username)
             img#avatar(src='/' + user.avatar)
       .product 
         .small-cart-container
@@ -54,7 +49,11 @@ html
                 .product-container
                   img.product-image(src=product.image)
                   h6.name-items=product.name
-                  p=`Giá bán: ${product.price}đ`
+                  span=`Số lượng: ${product.count}`
+                  br
+                  span=`Giá bán: ${product.price}đ`
+                  button(type='button')
+                    a.delete_button(href='/cart/delete/' + product.name) Xóa
             .col-md-8
             .payment-info
                 .d-flex.justify-content-between.align-items-center

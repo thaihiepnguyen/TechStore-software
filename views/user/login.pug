@@ -22,17 +22,16 @@ script(src='/js/handleLogin.js')
                     form#form.form(action='/user/login', method='POST')
                       .d-flex.align-items-center.mb-3.pb-1
                         span.h1.fw-bold.mb-0.title TechStore
-                      h5.fw-normal.mb-3.pb-3(style='letter-spacing: 1px;') Log into your account
+                      h5.fw-normal.mb-3.pb-3(style='letter-spacing: 1px;') Đăng nhập vào tài khoản của bạn
                       .spacer
                       .form-control
-                        input#username(name='username', type='text', placeholder='User name')
+                        input#username(name='username', type='text', placeholder='Tên đăng nhập')
                         
                         span.form-message
                         i.fas.fa-check-circle  
-                        yi.fas.fa-exclamation-circle  
                         small Error message
                       .form-control
-                        input#password(name='password', type='password', placeholder='Password')
+                        input#password(name='password', type='password', placeholder='Mật khẩu')
                         span.form-message
                         i.fas.fa-check-circle  
                         i.fas.fa-exclamation-circle  
@@ -40,10 +39,10 @@ script(src='/js/handleLogin.js')
                         if error_login
                           p#error #{error_login}
                       button login
-                      a.small.text-muted(href='#!') Forgot password?
+                      a.small.text-muted(href='#!') Quên mật khẩu?
                       p.mb-5.pb-lg-2(stle='color: #393f81;')
-                        | Don&apos;t have an account? 
-                        a(href='/user/signup', style='color: #393f81;') Register here
+                        | Bạn chưa có tài khoản? 
+                        a(href='/user/signup', style='color: #393f81;') Đăng ký ở đây
                       a.small.text-muted(href='./termofuse.html') Terms of use.
                       a.small.text-muted(href='./privacy.html') Privacy policy
 script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')

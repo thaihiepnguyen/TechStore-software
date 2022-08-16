@@ -38,6 +38,8 @@ module.exports.handleSignup = async function(req, res) {
 		email: req.body.email,
 		password: req.body.pass,
 		avatar: req.file != null ? req.file.path.split('/').slice(1).join('/') : '',
+		address: 'None',
+		phonenumber: 'None',
 	}
 
 	if (await User.findOne(this_user) != null) {

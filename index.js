@@ -58,7 +58,24 @@ app.get('/deleteCookie', (req, res) => {
 	res.redirect('/');
 })
 
-// lưu trạng thái người dùng
+app.get('/sort', async (req, res) => {
+	const products = await Product.find();
+
+	for (let i = 0; i < products.length; i++) {
+		for (let j = 0; j < products.length; j++) {
+			if (parseInt(products[i].price) < parseInt(products[j].price)) {
+				let temp = products[i];
+				products[i] = products[j];
+				products[j] = temp;
+			}
+		}
+	}
+
+	res.render('product/items.pug',
+	{
+		products: products
+	});
+})
 
 
 app.listen(PORT, () => {
