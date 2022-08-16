@@ -1,0 +1,18 @@
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.flex-items {
+    flex: 1;
+    min-width: 200px;
+}
+
+.flex-items img {
+    width: 200px;
+}
+
+.name-items {
+    margin-top: 25px;
+}
