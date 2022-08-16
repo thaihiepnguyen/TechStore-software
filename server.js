@@ -2,10 +2,11 @@ const express = require("express")
 const path = require("path")
 const bodyParser = require("body-parser")
 const mongoose = require("mongoose")
-const Router = require("./controllers/user.controllers.js")
+const ProductRouter = require("./routers/product.routes")
+
 const PORT = 3000
 
-mongoose.connect('mongodb://127.0.0.1:27017/test');
+mongoose.connect('mongodb+srv://doananhduong:duong1234@cluster0.lgai80j.mongodb.net/?retryWrites=true&w=majority');
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
@@ -14,13 +15,11 @@ db.once("open", function () {
 });
 
 const app = express()
-app.use(Router)
-app.use('/',express.static(path.join(__dirname, 'view')))
+app.use('/',express.static(path.join(__dirname, 'views')))
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, 'view/signup.html'));
+  res.sendFile(path.join(__dirname, 'views/product.html'));
 });
-app.use(bodyParser.json())
-app.use(express.json())
+app.use(ProductRouter)
 
 app.listen(PORT, ()=> {
     
