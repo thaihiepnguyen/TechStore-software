@@ -14,15 +14,8 @@ router.get('/signup', controller.getSignupPage);
 
 router.post('/api/signup', upload.single('avatar'), controller.handleSignup);
 
-router.get('/:username', async (req, res) => {
+router.get('/:username', controller.getUserProfile);
 
-    console.log(req.cookies.userId)
-    let this_user = await User.findOne({username: req.cookies.userId})
-
-    console.log(this_user)
-    res.render('user/profile.pug', {
-        user: this_user
-    })
-})
+router.post('/edit/:username', controller.editUserProfile);
 
 module.exports = router;

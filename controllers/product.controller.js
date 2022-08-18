@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 module.exports.getProductPage = async function(req, res) {
-	var products = await Product.find()
+	const products = await Product.find()
 	res.render('product/items.pug',
 	{
 		products: products
@@ -49,8 +49,8 @@ module.exports.getProductItem = async function(req, res) {
         username: req.cookies.userId
     };
 
-    db_user = await User.findOne(this_user)
-    db_product = await Product.find()
+    const db_user = await User.findOne(this_user)
+    const db_product = await Product.find()
     if (db_user != null) {
         res.render('product/items', {
             user: db_user,

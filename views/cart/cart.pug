@@ -1,7 +1,7 @@
 html
     head 
         meta(charset='UTF-8')
-        title TechStore | Home
+        title TechStore | Cart
         link(rel="stylesheet",
         href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css",
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
@@ -10,6 +10,7 @@ html
         link(rel='stylesheet', href="/styles/product-styles.css")
         link(rel="stylesheet", href="/styles/home-styles.css")
         link(rel="stylesheet", href="/styles/cart.css")
+        link(rel="shortcut icon", type="image/x-icon", href="/images/logo.png")
     body
       nav.flex-div
         a.nav-left(href='/')
@@ -54,25 +55,26 @@ html
                   span=`Giá bán: ${product.price}đ`
                   button(type='button')
                     a.delete_button(href='/cart/delete/' + product.name) Xóa
+
             .col-md-8
-            .payment-info
-                .d-flex.justify-content-between.align-items-center
-                span Chi tiết đơn hàng
-                span.type.d-block.mt-3.mb-1 Thông tin thẻ tín dụng
-                div
-                label.credit-card-label Tên thẻ tín dụng
-                input.form-control(type='text')
-                div
-                label.credit-card-label Số tài khoản
-                input.form-control(type='text')
-                div
-                label.credit-card-label Địa chỉ nhận hàng
-                input.form-control(type='text')
-                hr.line
-                .d-flex.justify-content-between.information
-                span Tổng:    #{total} đ
-                br
-                button(type='button') Checkout
+            form(action="/cart/checkout", method='POST').payment-info
+              .d-flex.justify-content-between.align-items-center
+              span Chi tiết đơn hàng
+              span.type.d-block.mt-3.mb-1 Thông tin thẻ tín dụng
+              div
+              label.credit-card-label Tên thẻ tín dụng
+              input.form-control(name='payment',type='text')
+              div
+              label.credit-card-label Số tài khoản
+              input.form-control(name='stk',type='text')
+              div
+              label.credit-card-label Địa chỉ nhận hàng
+              input.form-control(name='address',type='text')
+              hr.line
+              .d-flex.justify-content-between.information
+              span Tổng:    #{total} đ
+              br
+              button Checkout
 
     footer.site-footer
       .container

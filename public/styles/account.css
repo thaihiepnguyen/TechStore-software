@@ -101,6 +101,7 @@
     display: inline-block;
   }
 
-  #space-save {
-    margin-right: 50px;
+  #space-button {
+    margin-top: 100px;
+    width: 100px;
   }

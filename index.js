@@ -76,7 +76,7 @@ app.get('/sort', async (req, res) => {
 
 
 app.listen(PORT, () => {
-	// khởi chạy server.
+
 	console.log(`Server running on ${PORT}`);
 })
 

@@ -16,7 +16,7 @@ module.exports.handleLogin = async function(req, res) {
 		password: req.body.password
 	}
 
-	db_user = await User.findOne(this_user)
+	const db_user = await User.findOne(this_user)
 
 	if (db_user == null) {
 		res.render('user/login.pug', {
@@ -48,7 +48,7 @@ module.exports.handleSignup = async function(req, res) {
 		});
 	}
 	
-	errors = {
+	let errors = {
 		username: "",
 		email: "",
 		password: "",
@@ -76,7 +76,7 @@ module.exports.handleSignup = async function(req, res) {
 	}
 
 	if (this_user.avatar == '') {
-		console.log('error')
+		console.log('error');
 	}
 
 	if (flag == 1) {
@@ -93,16 +93,34 @@ module.exports.handleSignup = async function(req, res) {
 }
 
 module.exports.getUserProfile = async function(req, res) {
+    let this_user = await User.findOne({username: req.cookies.userId});
 
-    console.log(req.cookies.userId)
-    let this_user = await User.findOne({username: req.cookies.userId})
-
-    console.log(this_user)
     res.render('user/profile.pug', {
         user: this_user
-    })
+    });
 }
 
+module.exports.editUserProfile = async function(req, res) {
+	const edit_info = {
+		password: req.body.password,
+		phonenumber: req.body.phonenumber,
+		address: req.body.address,
+		email: req.body.email,
+	}
+
+	let this_user = await User.findOne({username: req.cookies.userId});
+
+	for (const variable in edit_info) {
+		if (edit_info[variable] != '') {
+			this_user[variable] = edit_info[variable];
+		}
+	}
+
+	this_user.save();
+	res.render('user/profile.pug', {
+		user: this_user
+	});
+}
 
 
 
