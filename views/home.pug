@@ -7,29 +7,30 @@ html
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
         crossorigin="anonymous")
         link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
-
+        link(rel="shortcut icon", type="image/x-icon", href="/images/logo.png")
         link(rel="stylesheet", href="/styles/home-styles.css")
     body
       nav.flex-div
         a.nav-left(href='/')
-          img.logo-web(src='./images/logo.png', alt='')
+          img.logo-web(src='/images/logo.png', alt='')
         .nav-middle.flex-div
           form(action="/product/items/search", method='GET').search-box.flex-div
             input(type='text', name='q', placeholder='Tìm kiếm sản phẩm')
             button
-              img.search-icon(src='./images/search.svg.png', alt='')
-        .nav-right.flex-div
-          if !user
+              img.search-icon(src='/images/search.svg.png', alt='')
+        
+        if !user
+          .nav-right.flex-div
             button.login-button
               a(href='user/login') Đăng Nhập
             button.signup-button 
               a(href='user/signup') Đăng Ký
-          else
-            a#username(href='/user/' + user.username) #{user.username}
-            img#avatar(src='/' + user.avatar)
-            a#logout(href='/deleteCookie') Đăng Xuất
+        else
+          .flex-div
             a#cart(href='/cart/' + user.username)
               img#cart-icon(src='/images/cart.png')
+            a#username(href='/user/' + user.username)
+              img#avatar(src='/' + user.avatar)
       .header-content.row
         .col-3
           h1 Sản Phẩm Có Giá Cực Hot!

@@ -159,7 +159,7 @@ html {
 	visibility: visible;
 }
 
-.form-control.error i.fa-exclamation-circle {
+.form-control.error {
 	color: #e74c3c;
 	visibility: visible;
 }

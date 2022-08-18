@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 module.exports.getProductPage = async function(req, res) {
-	var products = await Product.find()
+	const products = await Product.find()
 	res.render('product/items.pug',
 	{
 		products: products
@@ -32,17 +32,32 @@ module.exports.searchEngine = async function(req, res) {
 		}
 
 		const users = await User.findOne(this_user);
-		console.log(users)
 		res.render('product/items.pug',
 		{
 			products: matchedProducts,
 			user: users,
 		});
 	}
-
 }
 
+module.exports.getProductItem = async function(req, res) {
+    if (!req.cookies.userId) {
+        res.redirect('/user/login');
+        return;
+    }
+    const this_user = {
+        username: req.cookies.userId
+    };
 
+    const db_user = await User.findOne(this_user)
+    const db_product = await Product.find()
+    if (db_user != null) {
+        res.render('product/items', {
+            user: db_user,
+            products: db_product
+        })
+    }
+}
 
 
 
