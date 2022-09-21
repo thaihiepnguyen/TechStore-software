@@ -2,7 +2,7 @@
 
 - Made with Node.js for backend
 - Made with JS/HTML/CSS for frontend
-- The Project of Introduction to Software Engineering
+- The Project of **Introduction to Software Engineering**
 
 # Requirements
 
