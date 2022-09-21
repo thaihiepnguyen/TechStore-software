@@ -13,7 +13,7 @@
 
 ```
 % npm init
-% npm install body-parser cookie-parser dotenv express jsonwebtoken mongodb
+% npm install body-parser cookie-parser dotenv express jsonwebtoken mongodb mongoose
 ```
 
 # Deployment
