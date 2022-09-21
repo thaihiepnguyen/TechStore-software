@@ -6,43 +6,6 @@ const userRouter = require('./routers/user.router');
 const productRouter = require('./routers/product.router');
 const cartRouter = require('./routers/cart.router');
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-mongoose.connect('mongodb://127.0.0.1:27017/test');
-
-var Scheme = mongoose.Schema;
-
-var userData = new Scheme({
-	title: String,
-	content: String,
-	author: String,
-});
-
-var UserData = mongoose.model('UserData', userData, 'user');
-
-async function run() {
-	const user = await User.create({ name: 'hiep', pass: 'dasddq'});
-	console.log(user);
-}
-run()
-=======
-// const authRouter = require('./routers/auth.router');
-const multer = require('multer');
-const jwt = require('jsonwebtoken');
-=======
-
->>>>>>> nguyen_thai_hiep
-var cookieParser = require('cookie-parser')
->>>>>>> nguyen_thai_hiep
-
-
-<<<<<<< HEAD
-user.save().then(() => {
-	console.log(user);
-})
-=======
->>>>>>> nguyen_thai_hiep
-
 mongoose.connect('mongodb://127.0.0.1:27017/test');
 
 const app = express();
@@ -72,7 +35,7 @@ app.get('/', async (req, res) => {
 			username: req.cookies.userId
 		}
 		db_user = await User.findOne(this_user)
-		
+
 		res.render('home.pug', {
 			user: db_user
 		})
@@ -87,7 +50,7 @@ app.get('/deleteCookie', (req, res) => {
 app.get('/sort', async (req, res) => {
 
 	const products = await Product.find();
-	const user = await User.findOne({'username': req.cookies.userId});
+	const user = await User.findOne({ 'username': req.cookies.userId });
 
 	for (let i = 0; i < products.length; i++) {
 		for (let j = 0; j < products.length; j++) {
@@ -100,10 +63,10 @@ app.get('/sort', async (req, res) => {
 	}
 
 	res.render('product/items.pug',
-	{
-		products: products,
-		user: user
-	});
+		{
+			products: products,
+			user: user
+		});
 })
 
 
