@@ -1,6 +1,6 @@
 # TechStore Website
 
-- Made with Node.js for backend
+- Made with Express Framework of Node.js web application
 - Made with JS/HTML/CSS for frontend
 - The Project of **Introduction to Software Engineering**
 
