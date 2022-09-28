@@ -3,6 +3,13 @@
 - Made with Express Framework of Node.js web application
 - Made with JS/HTML/CSS for frontend
 - The Project of **Introduction to Software Engineering**
+- Members of the Group 03:
+
+  1. Nguyễn Thái Hiệp - Product Manager, Developer
+  2. Đoàn Ánh Dương - Developer, Designer, Tester
+  3. Lê Nguyễn Lan Vy - Developer, Business Analyst, Tester
+  4. Dương Quang Bình - Developer, Designer, Tester
+  5. Phùng Nghĩa Phúc - Developer, Designer, Tester
 
 # Requirements
 
