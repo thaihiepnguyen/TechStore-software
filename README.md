@@ -3,6 +3,7 @@
 - Made with Express Framework of Node.js web application
 - Made with JS/HTML/CSS for frontend
 - The Project of **Introduction to Software Engineering**
+- Scores: 8.5/10 :)
 - Members of the Group 03:
 
   1. Nguyễn Thái Hiệp - Product Manager, Developer
