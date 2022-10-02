@@ -5,6 +5,7 @@ const Product = require('./models/product.model');
 const userRouter = require('./routers/user.router');
 const productRouter = require('./routers/product.router');
 const cartRouter = require('./routers/cart.router');
+const cookieParser = require('cookie-parser')
 
 mongoose.connect('mongodb://127.0.0.1:27017/test');
 
@@ -23,7 +24,7 @@ app.use('/product', productRouter);
 app.use('/cart', cartRouter);
 
 
-// để sử dụng statis css file
+// to use statis css file
 app.use(express.static('public'));
 
 app.get('/', async (req, res) => {
@@ -41,34 +42,6 @@ app.get('/', async (req, res) => {
 		})
 	}
 });
-
-app.get('/deleteCookie', (req, res) => {
-	res.clearCookie('userId');
-	res.redirect('/');
-})
-
-app.get('/sort', async (req, res) => {
-
-	const products = await Product.find();
-	const user = await User.findOne({ 'username': req.cookies.userId });
-
-	for (let i = 0; i < products.length; i++) {
-		for (let j = 0; j < products.length; j++) {
-			if (parseInt(products[i].price) < parseInt(products[j].price)) {
-				let temp = products[i];
-				products[i] = products[j];
-				products[j] = temp;
-			}
-		}
-	}
-
-	res.render('product/items.pug',
-		{
-			products: products,
-			user: user
-		});
-})
-
 
 app.listen(PORT, () => {
 

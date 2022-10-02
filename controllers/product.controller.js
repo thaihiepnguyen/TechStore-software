@@ -1,8 +1,5 @@
 const Product = require('../models/product.model');
 const User = require('../models/user.model');
-const bodyParse = require('body-parser');
-const express = require('express');
-const router = express.Router();
 
 module.exports.getProductPage = async function(req, res) {
 	const products = await Product.find()
@@ -59,7 +56,21 @@ module.exports.getProductItem = async function(req, res) {
     }
 }
 
+module.exports.sortEngine = async function(req, res) {
+	if (!req.cookies.userId) {
+		res.render('home.pug');
+	}
+	else {
+		const this_user = {
+			username: req.cookies.userId
+		}
+		db_user = await User.findOne(this_user)
 
+		res.render('home.pug', {
+			user: db_user
+		})
+	}
+}
 
 
 

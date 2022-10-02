@@ -1,10 +1,4 @@
 const User = require('../models/user.model');
-const bodyParse = require('body-parser');
-const express = require('express');
-const router = express.Router();
-const multer = require('multer');
-const upload = multer({ dest: './public/uploads/' });
-const jwt = require('jsonwebtoken');
 
 module.exports.getLoginPage = function(req, res) {
 	res.render('user/login');
@@ -122,7 +116,10 @@ module.exports.editUserProfile = async function(req, res) {
 	});
 }
 
-
+module.exports.getLogout = function(req, res) {
+	res.clearCookie('userId');
+	res.redirect('/');
+}
 
 
 

@@ -11,5 +11,7 @@ router.get('/items/search', controller.searchEngine);
 
 router.get('/items/:username', controller.getProductItem);
 
+router.get('/items/sort', controller.sortEngine);
+
 
 module.exports = router;

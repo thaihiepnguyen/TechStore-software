@@ -18,4 +18,7 @@ router.get('/:username', controller.getUserProfile);
 
 router.post('/edit/:username', controller.editUserProfile);
 
+router.get('/api/deleteCookie', controller.getLogout);
+
+
 module.exports = router;
