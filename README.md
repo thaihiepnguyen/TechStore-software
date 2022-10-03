@@ -30,7 +30,7 @@
 % node index.js
 ```
 
-**Note: Your server default runs on <mark>PORT 3000</mark> and open http://localhost:3000 to view it in the browser.**
+**Note: Your server default runs on <mark>PORT 3000</mark> and opens http://localhost:3000 to view it in the browser.**
 
 # Overview
 
